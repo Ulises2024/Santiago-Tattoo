@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/logo/logo_tattoo.png' %}">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
+    <!-- JQUERY -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS - LOGIN -->
+    <link rel="stylesheet" href="{% static './css/PerfilTatuador.css' %}">
+    <title>Mi Perfil</title>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'img/logo/logo_tattoo.png' %}" alt="Logo-Santiago-Tattoo">
+                <span class="text-logo">Santiago Tattoo</span> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'PerfilUsuario' %}">Perfil Usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Registrar</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Administrador</a>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
+                            <i class="fa-regular fa-share-from-square" style="color: #ffffff;"></i>
+                            <span>Salir</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'loginpage' %}">
+                            <i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+                            <span>Ingresar</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-------------------- FIN NAVBAR ------------------------------------->
+    <section class="vh-100 section__login">
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                    <div class="perfil-usuario-avatar">
+                        <img src="{% static 'img/index/index_imgs/colaboradores/tatuadores/tony.webp' %}" alt="img-avatar">
+                        <button type="button" class="boton-avatar">
+                            <i class="far fa-image"></i>
+                        </button>
+                    </div>
+                    <button type="button" class="boton-portada">
+                        <i class="far fa-image"></i> Cambiar fondo
+                    </button>
+                </div>
+            </div>
+            <div class="perfil-usuario-body">
+                <div class="perfil-usuario-bio">
+                    {% if cliente %}
+                    <h3 class="titulo">{{ cliente.persona.nombre }}</h3>
+                    <p class="texto">Adicto a la tinta N°= {{ cliente.id }}</p>
+                </div>
+                <div class="perfil-usuario-footer">
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-briefcase"></i> Teléfono: {{ cliente.telefono.telefono }}</li>
+                        <li><i class="icono fas fa-calendar-alt"></i> Edad: {{ cliente.persona.edad }}</li>
+                        <li><i class="icono fas fa-user-check"></i> Email: {{ cliente.emails.mail }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Género: {{ cliente.persona.genero }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
+                    </ul>
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-share-alt"></i> Calle: {{ cliente.direccion.nombre }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Block: {{ cliente.direccion.block }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Departamento: {{ cliente.direccion.departamento }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Número: {{ cliente.direccion.numero }}</li>
+                        <li><i class="icono fas fa-share-alt"></i> Comuna: {{ cliente.direccion.comuna.nombre }}</li>
+                    </ul>
+                    <form method="POST" action="{% url 'PerfilUsuarioModificar' %}">
+                        {% csrf_token %}
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value="{{ cliente.persona.nombre }}">
+                        <br>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" value="{{ cliente.telefono.telefono }}">
+                        <br>
+                        <label for="edad">Edad:</label>
+                        <input type="text" id="edad" name="edad" value="{{ cliente.persona.edad }}">
+                        <br>
+                        <button type="submit">Guardar Cambios</button>
+                    </form>
+                    {% else %}
+                    <p>No se encontraron datos del cliente.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

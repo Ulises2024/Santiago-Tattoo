@@ -1,0 +1,23 @@
+services:
+  portal-web:
+    build: ./portafolio_app
+    ports:
+      - "8000:8000"
+    #command: ["sh /opt/app/wait-db.sh", "mysql-db:3306", "&&", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["sh", "/opt/app/entrypoint.sh", "mysql-db", "3306"]
+    volumes:
+      - ./portafolio_app/:/opt/app/portafolio_app
+    links:
+      - mysql-db
+    networks:
+      - portafolio-net      
+
+  mysql-db:
+    build: ./db
+    ports:
+      - "10306:3306"
+    networks:
+      - portafolio-net      
+
+networks:
+  portafolio-net:

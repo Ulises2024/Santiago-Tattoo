@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="es">
+  {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" href="{% static 'img/index/logo/logo_tattoo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet"/>
+
+    <!-- LIBRERIA DE EFECTOS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css" integrity="sha512-YsQsOFsZnSmn8XF+bIJ+Yq3maq26/q/fJWfQ+e/aMz9L1hG+kWyRtUbY8cqgJXY3qdbkOoCxPQW8QvL+h1XGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- glider-js estilos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    
+    <title>Santiago Tattoo</title>
+  </head>
+  <body>
+
+    <nav class="navbar bg-dark navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'img/index/logo/logo_tattoo.png' %}" alt="Logo tattoo">
+          <span class="text-logo">Santiago Tattoo</span> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a>
+              </li>
+
+          </ul>
+          <hr>
+          <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              {% if user.is_authenticated %}
+              <li class="nav-item msj_welcome justify-content-center text-center pt-2" style="color: white;">Bienvenido, {{ user.username }}</li>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'PerfilUsuario' %}">Perfil</a></li>
+
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'logout' %}">Cerrar sesión</a></li>
+              
+              {% else %}
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'loginpage' %}">Iniciar sesión</a></li>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'register' %}">Registrarse</a></li>
+              {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+ 
+    <!-- ================================================================= -->
+    <!-- ==============             BANNER TOP PARALLAX    =============== -->
+    <!-- ================================================================= -->
+    <section class="parallax">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="parallax-text col-sm-12 col-md-12 col-lg-12">
+            <img class="img-fluid" src="{% static 'img/index/logo/Black_and_White_Vintage_Retro_Barbershop_Business_Logo-removebg-preview.png' %}" alt="logo" width="200px">
+            <h1>¡Santiago Tattoo!</h1>
+          </div>
+        </div>
+      </div>
+      <img src="{% static 'img/index/index_imgs/Texturas_section/seccion_inferior/inferior.png' %}" class="overlay-image-bottom">
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ==============             Bienvenida PAGINA    =============== -->
+    <!-- ================================================================= -->
+    <section class="seccion_bienvenidos">
+      <div class="container">
+        <div class="row pt-4">
+          <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center justify-content-center img-container">
+            <img class="img-fluid img_bienvenida" src="{% static 'img/index/index_imgs/bienvenida/bienvenida.webp' %}" alt="img-bienvenida">
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-8">
+            <h1>¡Bienvenidos al rincón digital de Santiago Tattoo, donde cada día es una nueva oportunidad de transformar tus ideas en arte para llevar siempre contigo.!</h1>
+            <br><br>
+            <h2>Si sientes el llamado de la tinta y el deseo de embellecer tu piel con diseños que hablen de ti, estás en el lugar correcto. Navega a tu conveniencia por nuestras galerías de tattoo y piercing para encontrar esa chispa de inspiración, o ponte en contacto directamente para plasmar tu visión en una obra de arte personalizada. No sólo nos dedicamos a crear tatuajes, sino a cuidar de ti y de tu pieza artística con recomendaciones detalladas sobre el cuidado post-tatuaje.</h2>
+            <br>
+            <h2 class="h2_resaltada">¡Explora, inspírate y toma el siguiente paso en tu viaje artístico con nosotros hoy mismo!</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- ================================================================= -->
+    <!-- ==============             Bienvenida PAGINA    =============== -->
+    <!-- ================================================================= -->
+    <section class="parallax_1">
+      <img src="{% static 'img/index/index_imgs/texturas_section/seccion_superior/superior.png' %}" class="overlay-image-top">
+      <div class="container">
+        <div class="row">
+          <div class="parallax-text col-sm-12 col-md-12 col-lg-12">
+            <h1>ESTUDIO DE TATUAJE Y PIERCING</h1>
+          </div>
+        </div>
+      </div>
+      <img src="{% static 'img/index/index_imgs/texturas_section/seccion_inferior/inferior.png' %}" class="overlay-image-bottom">
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ==============             CONOCE A SANTIAGO TATTOO    =============== -->
+    <!-- ================================================================= -->
+    <section class="conoce">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-center">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="card text-center">
+              <div class="card-header">
+                <h1>¡CONOCE A SANTIAGO TATTOO Y SU EQUIPO!</h1>
+              </div>
+              <div class="card-body">
+                <img class="conoce_icono mx-auto d-block mb-4" src="{% static 'img/index/index_imgs/conoce_santiago_tattoo/conoce_icono-removebg-preview.png' %}">
+                <h2 class="card-text">Santiago Tattoo emerge como un moderno estudio de tatuajes y piercings, comprometido con el arte corpóreo y la expresión individual. Nuestra fundación, en el vibrante corazón de Santiago, nos ha permitido cultivar un ambiente donde la creatividad y la profesionalidad se unen para ofrecer una experiencia única. Con un enfoque personalizado y una atención meticulosa a la seguridad, Santiago Tattoo se ha convertido en un referente para entusiastas y curiosos del arte en la piel.</h2>
+                <br>
+                <h2 class="card-text">Nuestro equipo está formado por talentosos artistas, cada uno especializado en distintos estilos, lo que nos permite abarcar desde los diseños más tradicionales hasta las últimas tendencias en tatuajes y piercings. Al explorar nuestra web, te invitamos a sumergirte en una galería de arte viva, una muestra de la pasión y habilidad que ponemos en cada trabajo. En Santiago Tattoo, no solo buscamos dejar una marca indeleble en la piel, sino también en el corazón de cada cliente que nos elige para narrar su historia a través del arte. Te esperamos con las puertas abiertas para transformar tus ideas en arte que podrás llevar con orgullo.</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- ==============             COLABORADORES          =============== -->
+    <!-- ================================================================= -->
+    <section class="custom-section">
+      <div class="container-fluid">
+        <div class="row row_fondo">
+          <!-- Primera columna con una tarjeta que ocupa todo el espacio -->
+          <div class="col-12 col-md-6 col-sm-12 mb-3">
+            <div class="card h-100 image-container image-container_tienda">
+              <img src="../../static/img/index/index_imgs/colaboradores/tienda/santiago_tattoo_estudio.webp" class="card-img-top img-fluid" alt="Card Image">
+              <h2 class="static-title">ESTUDIO</h2>
+              <div class="image-overlay">
+                <div class="overlay-box"></div>
+                <div class="overlay-text p_study">
+                  <p>Santiago Tattoo emerge como un moderno estudio de tatuajes y piercings, comprometido con el arte corpóreo y la expresión individual. Nuestra fundación, en el vibrante corazón de Santiago, nos ha permitido cultivar un ambiente donde la creatividad y la profesionalidad se unen para ofrecer una experiencia única. Con un enfoque personalizado y una atención meticulosa a la seguridad, Santiago Tattoo se ha convertido en un referente para entusiastas y curiosos del arte en la piel.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Segunda columna con dos filas y tres tarjetas en cada fila -->
+          <div class="col-12 col-md-6 ">
+            <div class="row row_fondo">
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container ">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/nina.png" class="card-img-top" alt="Card Image">
+                  <a href="{% url 'PerfilTatuador' tatuador_id=4 %}"><h2 class="static-title">NINA</h2></a>
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Artista Tattoo & Piercer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/trini.png" class="card-img-top" alt="Card Image">
+                  <a href="{% url 'PerfilTatuador' tatuador_id=5 %}"><h2 class="static-title">TRINI</h2></a>
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Artista Tattoo & Piercer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/nicole.webp" class="card-img-top" alt="Card Image">
+                  <a href="{% url 'PerfilTatuador' tatuador_id=3 %}"><h2 class="static-title">NICOLE</h2></a>
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Artista Tattoo & Piercer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/juan.webp" class="card-img-top" alt="Card Image">
+                  <a href="{% url 'PerfilTatuador' tatuador_id=1 %}"><h2 class="static-title">JUAN</h2></a>
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Artista Tattoo & Piercer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/tony.webp" class="card-img-top" alt="Card Image">
+                  <a href="{% url 'PerfilTatuador' tatuador_id=2 %}"><h2 class="static-title">TONY</h2></a>
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Artista Tattoo & Piercer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-4 col-sm-12 mb-3">
+                <div class="card image-container">
+                  <img src="../../static/img/index/index_imgs/colaboradores/tatuadores/trabaja.webp" class="card-img-top" alt="Card Image">
+                  <div class="image-overlay">
+                    <div class="overlay-box"></div>
+                    <div class="overlay-text">
+                      <p>Trabaja con Nosotros</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    <!-- ================================================================= -->
+    <!-- ==============             RESEÑAS                =============== -->
+    <!-- ================================================================= -->
+    <section class="reseñas">
+      <div class="container ">
+        <div class="container">
+          <div class="row">
+            <div class="col-12"> <!-- Asegura que tome todo el ancho en todas las vistas -->
+              <div class="titulo_resenas mx-auto justify-content-center d-flex">
+                <h1>RESEÑAS DESTACADAS</h1><br>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div id="carouselExampleCaptions" class="carousel slide col-12" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p>Para ser mi primera vez, me he sentido muy cómodo, me han ayudado y recomendado en todo momento. Da gusto ir a un sitio así y que te traten tan bien haciéndote sentir como en tu casa. Grandes profesionales, atentos al más mínimo detalle y yo personalmente los recomiendo por donde voy. VOLVERÉ PRONTO</p>
+                    <p class="enviado-por">ENVIADO POR: JOSÉ MARÍA</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p>Para ser mi primera vez, me he sentido muy cómodo, me han ayudado y recomendado en todo momento. Da gusto ir a un sitio así y que te traten tan bien haciéndote sentir como en tu casa. Grandes profesionales, atentos al más mínimo detalle y yo personalmente los recomiendo por donde voy. VOLVERÉ PRONTO</p>
+                    <p class="enviado-por">ENVIADO POR: JOSÉ MARÍA</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-caption d-none d-md-block">
+                    <p>Para ser mi primera vez, me he sentido muy cómodo, me han ayudado y recomendado en todo momento. Da gusto ir a un sitio así y que te traten tan bien haciéndote sentir como en tu casa. Grandes profesionales, atentos al más mínimo detalle y yo personalmente los recomiendo por donde voy. VOLVERÉ PRONTO</p>
+                    <p class="enviado-por">ENVIADO POR: JOSÉ MARÍA</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ==============             Agendar                =============== -->
+    <!-- ================================================================= -->
+    <section class="fondo_agendar">
+      <div class="container">
+          <div class="container mt-5">
+              <div class="row justify-content-center content_card">
+                  <div class="col-12 text-center">
+                      <h2 class="titulo_agendar">Programa tu Cita</h2>
+                      <p class="subtitulo_agenda">Reserva tu cita fácilmente con unos pocos clics. ¡No pierdas la oportunidad de asegurar tu espacio!</p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                      <a href="{% url 'crear_cita' %}" class="text-decoration-none">
+                          <div class="card mb-3">
+                              <div class="row g-0">
+                                  <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                      <i class="fas fa-calendar-plus fa-5x"></i>
+                                  </div>
+                                  <div class="col-md-8">
+                                      <div class="card-body d-flex align-items-center">
+                                          <h5 class="card-title mb-0">Agendar cita</h5>
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-12 col-md-4">
+                      <a href="{% if is_staff %}{% url 'calendar-view' %}{% else %}{% url 'calendar-cliente' %}{% endif %}" class="text-decoration-none">
+                          <div class="card mb-3">
+                              <div class="row g-0">
+                                  <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                      <i class="fas fa-calendar-alt fa-5x"></i>
+                                  </div>
+                                  <div class="col-md-8">
+                                      <div class="card-body d-flex align-items-center">
+                                          <h5 class="card-title mb-0">Ver calendario</h5>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <a href="{% url 'contacto' %}" class="text-decoration-none">
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                                    <i class="fas fa-envelope fa-5x"></i>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body d-flex align-items-center">
+                                        <h5 class="card-title mb-0">Contactanos</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+          </div>
+      </div>
+    </section>
+
+
+
+    <!-- Botón del chatbot -->
+    <button id="chatbot-button" class="btn btn-primary"><span>Preguntas Frecuentes</span></button>
+
+    <!-- Contenedor del chatbot -->
+    <div id="chatbot">
+      <div id="chatbot-header">
+          Chatbot
+          <button id="close-chatbot">&times;</button>
+      </div>
+      <div id="chatbot-content">
+          <!-- Aquí van las tarjetas -->
+          <div class="card" data-title="Horario de atención" data-content='<p><i class="fas fa-clock"></i> Nuestros horarios de atención son de 10 AM a 8 PM de lunes a viernes.</p><img src="https://via.placeholder.com/150" alt="Horario de atención">' >
+              <div class="card-body">
+                  <h1>Horario de atención</h1>
+              </div>
+          </div>
+          <div class="card" data-title="Precios" data-content='<p><i class="fas fa-dollar-sign"></i> Nuestros precios varían según el tamaño y la complejidad del tatuaje. Contáctanos para más información.</p><img src="https://via.placeholder.com/150" alt="Precios">' >
+              <div class="card-body">
+                  <h1>Precios</h1>
+              </div>
+          </div>
+          <div class="card" data-title="Cuidados del tatuaje" data-content='<p><i class="fas fa-heart"></i> Es importante seguir estos cuidados para asegurar una buena cicatrización de tu tatuaje...</p><ul><li>Mantén la zona limpia y seca</li><li>Aplica la crema recomendada</li><li>Evita la exposición al sol</li></ul><img src="https://via.placeholder.com/150" alt="Cuidados del tatuaje">' >
+              <div class="card-body">
+                  <h1>Cuidados del tatuaje</h1>
+              </div>
+          </div>
+          <div class="card" data-title="Certificados de higiene" data-content='<p><i class="fas fa-certificate"></i> Contamos con todos los certificados de higiene y seguimos los protocolos más estrictos para tu seguridad.</p><img src="https://via.placeholder.com/150" alt="Certificados de higiene">' >
+              <div class="card-body">
+                  <h1>Certificados de higiene</h1>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- Submodal -->
+    <div id="submodal">
+      <div id="submodal-header">
+          <h5 id="submodal-title"></h5>
+          <button id="submodal-close">&times;</button>
+      </div>
+      <div id="submodal-content">
+          <!-- Contenido del submodal -->
+      </div>
+    </div>
+
+    <script>
+      // Mostrar/ocultar el chatbot
+      document.getElementById('chatbot-button').addEventListener('click', function() {
+          var chatbot = document.getElementById('chatbot');
+          var chatbotButton = document.getElementById('chatbot-button');
+          chatbot.style.display = 'block';
+          chatbotButton.style.display = 'none';
+      });
+
+      document.getElementById('close-chatbot').addEventListener('click', function() {
+          var chatbot = document.getElementById('chatbot');
+          var chatbotButton = document.getElementById('chatbot-button');
+          chatbot.style.display = 'none';
+          chatbotButton.style.display = 'block';
+      });
+
+      // Mostrar el submodal
+      document.querySelectorAll('.card').forEach(function(card) {
+          card.addEventListener('click', function() {
+              var title = card.getAttribute('data-title');
+              var content = card.getAttribute('data-content');
+              document.getElementById('submodal-title').textContent = title;
+              document.getElementById('submodal-content').innerHTML = content;
+              document.getElementById('submodal').style.display = 'block';
+          });
+      });
+
+      // Cerrar el submodal
+      document.getElementById('submodal-close').addEventListener('click', function() {
+          document.getElementById('submodal').style.display = 'none';
+      });
+    </script>
+
+
+
+
+    
+
+
+
+    
+
+    <!-- Al final del cuerpo del documento, antes de cerrar el tag </body> -->
+    <!-- GLIDER JS - CAROUSEL -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.8/glider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fontawesome@5.6.3/index.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CDN MOMENT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <!-- Chatbot Script -->
+    <script src="{% static 'js/chat_bot.js' %}"></script>
+
+    <script>
+      document.querySelectorAll('.image-container').forEach(container => {
+        container.addEventListener('mouseover', () => {
+          gsap.to(container.querySelector(".overlay-text p"), { duration: 0.5, x: 0, autoAlpha: 1 });
+        });
+  
+        container.addEventListener('mouseout', () => {
+          gsap.to(container.querySelector(".overlay-text p"), { duration: 0.5, x: -100, autoAlpha: 0 });
+        });
+      });
+    </script>
+  </body>
+  <!-- ================================================================= -->
+    <!-- ==============             Footer                =============== -->
+    <!-- ================================================================= -->
+    <footer class="btn-dark bg_footer text-center text-lg-start text-muted mt-3">
+      <!-- Section: Links  -->
+      <section>
+        <div class="container text-center text-md-start pt-4 pb-4">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-12 col-lg-3 col-sm-12 mb-2 text-center">
+              <!-- Content -->
+              <a href="{% url 'index' %}" target="_blank" class="text-white h2">
+                <img class="mb-3" src="{% static 'img/index/logo/logo_tattoo.png' %}" width="64px" alt="">
+              </a>
+              <p class="mt-1 text-white">
+                © 2024 Copyright - Derechos reservados: Ulises Morales González / Camilo Nieto 
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2"> 
+              <!-- Links -->
+              <h6 class="footer_title text-uppercase text-white fw-bold mb-2">
+                Santiago Tattoo
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Inicio</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Productos</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Nosotros</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Blogs</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2">
+              <!-- Links -->
+              <h6 class="footer_title text-uppercase text-white fw-bold mb-2">
+                Información
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Ayuda</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Reembolso</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Informaciones</a></li>
+                <li><a class="text-white-50" target="_blank" href="https://github.com/ulMorales?tab=repositories">Contacto</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-6 col-sm-4 col-lg-2">
+              <!-- Links -->
+              <h6 class="footer_title text-uppercase text-white fw-bold mb-2">
+                Soporte técnico
+              </h6>
+              <ul class="list-unstyled mb-4">
+                <li><a class="text-white-50" href="https://github.com/ulMorales?tab=repositories" target="_blank">Centro de ayuda</a></li>
+                <li><a class="text-white-50" href="https://github.com/ulMorales?tab=repositories" target="_blank">Documentos</a></li>
+                <li><a class="text-white-50" href="https://github.com/ulMorales?tab=repositories" target="_blank">Restaurar cuenta</a></li>
+                <li><a class="text-white-50" href="https://github.com/ulMorales?tab=repositories" target="_blank">Mis ordenes</a></li>
+              </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-12 col-sm-12 col-lg-3">
+              <!-- Links -->
+              <h6 class="footer_title text-uppercase text-white fw-bold mb-2">Novedades</h6>
+              <p class="text-white">Mantente al tanto de las ultimas novedades sobre nuestros productos y ofertas.</p>
+              <div class="input-group mb-3">
+                <input type="email" class="form-control border" placeholder="Correo" aria-label="Email" aria-describedby="button-addon2" />
+                <button class="btn btn-light border shadow-0" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+                  Enviar
+                </button>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <div class="footer-iconos">
+        <div class="container">
+          <div class="d-flex justify-content-between py-4 border-top">
+            <!--- payment --->
+            <div>
+              <i class="fab fa-lg fa-cc-visa text-white"></i>
+              <i class="fab fa-lg fa-cc-amex text-white"></i>
+              <i class="fab fa-lg fa-cc-mastercard text-white"></i>
+              <i class="fab fa-lg fa-cc-paypal text-white"></i>
+            </div>
+            <!--- payment --->
+            <div class="social">
+              <a href="https://github.com/ulMorales?tab=repositories" target="_blank" class="social__enlace"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://github.com/ulMorales?tab=repositories" target="_blank" class="social__enlace"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://github.com/ulMorales?tab=repositories" target="_blank" class="social__enlace"><i class="fa-brands fa-github"></i></a>
+              <a href="https://github.com/ulMorales?tab=repositories" target="_blank" class="social__enlace"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <!--- language selector --->
+            <div class="dropdown dropup">
+              <a class="dropdown-toggle text-white" href="#" id="Dropdown" role="button" data-mdb-toggle="dropdown" aria-expanded="false"> <i class="flag-spain flag m-0 me-1"></i>Español </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="Dropdown">
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español<i class="fa fa-check text-success ms-2"></i></a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
+                </li>
+              </ul>
+            </div>
+            <!--- language selector --->
+          </div>
+        </div>
+      </div>
+    </footer>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<br><br>
+<div class="container msj_exito">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5 success-message">
+            <div class="card">
+                <div class="card-body text-center justify-content-center">
+                    <h1 class="card-title">¡Cita creada exitosamente!</h1>
+                    <p class="card-text">Tu cita se ha creado exitosamente.</p>
+                    <a href="{% url 'crear_cita' %}" class="btn btn-primary">Crear otra cita</a>
+                    <a href="{% url 'calendar-view' %}" class="btn btn-secondary">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

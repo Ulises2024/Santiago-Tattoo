@@ -1,0 +1,20 @@
+# PORTAFOLIO APP
+
+Para ejecutar la aplicación desde cero se puede usar los siguientes archivos según el sistema operativo.
+
+
+**WINDOWS**
+
+En una terminal CMD ejecutar.
+
+```shell
+deploy.bat
+```
+
+**LINUX**
+
+En una terminal ejecutar.
+
+```shell
+sh deploy.sh
+```

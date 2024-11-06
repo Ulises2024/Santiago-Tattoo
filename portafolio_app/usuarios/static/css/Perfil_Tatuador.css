@@ -1,0 +1,278 @@
+:root{
+    --text-icon : #FFFFFF;
+    --accent : #8f0408;
+    --dark-main__cal: #141529;
+}
+/*Fuente para la sección*/
+@font-face {
+    font-family: 'PawWowBlock-VGMDl';
+    src: url('../fonts/AnimalPaw.ttf');
+}
+/*Fuente del Logo*/
+@font-face {
+    font-family: 'InaptlyRegular-rgwxB';
+    src: url('../fonts/InaptlyRegular-rgwxB.ttf');
+}
+/*Fuente para texto*/
+@font-face {
+    font-family: 'roboto';
+    src: url('href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+}
+
+/*=========================================================================================================*/
+/*==========  NAVBAR  ===============*/
+  /* CONFIGURACION DE NAVBAR */
+  .navbar{
+    /* background-color: var(--dark-main__cal) !important; */
+    width: 100%;
+
+}
+
+
+/*------------ LOGO ----------*/
+.navbar .container-fluid img{
+    width: 4rem;
+    height: auto;
+    margin-right: 6rem;
+    margin-left: 2rem;
+}
+
+
+/*------------ TEXTO-LINK ----------*/
+#navbarSupportedContent .navbar-nav .nav-item a{
+    color: var(--text-icon);
+    font-size: 22px;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+
+
+
+/*------------ TEXT-DROPMENU ----------*/
+#navbarSupportedContent .navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: var(--primary-text);
+    font-family: 'roboto';
+    font-size: 22px;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    
+}
+  #barraNav{
+    background-color: var(--dark-azulado);
+}
+  .navbar .navbar-brand img{
+    width: 40px;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -90px;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
+/*==========  SECCION  ===============*/
+.section__login{background-image: url('../img/seccion/tattoo_wallpaper.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 50;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    float: left;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    overflow: hidden;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 15px; /* Agrega bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+    background-color:white; /* Cambia el color de fondo */
+    padding: 20px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+}
+.profile-info .col{
+    text-align: justify;
+}
+
+#img__fondo{
+    background-image: url('../img/seccion/Tattoo_parallax.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 15px 0 0 15px;
+  }
+.titulo__text{
+    font-family: 'PawWowBlock-VGMDl';
+    font-size: 16pt;
+    color: var(--dark-main__cal);
+}
+
+#Profile__Fondo{
+    background-image: url('../img/Perfil_Usuario/Fondo_Perfil_usuario.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+#Profile__Fondo span{
+    color: #8f0408;
+    font-family: 'PawWowBlock-VGMDl';
+}
+
+/* SECCION FOOTER  */
+/*FOOTER ICONOS REDES SOCIALES*/
+
+.footer-iconos .social .fa-brands{
+    color: #8f0408;
+    padding-left: 25px;
+
+}
+.footer-iconos .social .social__enlace i{
+scale: 1.8;
+}
+
+#footer__link a{
+    color:white;
+    text-decoration: none;
+}
+
+#footer__link a:hover {
+    transition: color 0.4s ease-in-out;
+    color: #8f0408; /* Cambia el color del texto al pasar el mouse sobre los enlaces del footer */
+}
+
+
+label.error{
+    color: red;
+    font-size: 0.8em;
+    width: 200px;
+    top: 1px;
+   }
+
+/* -------------------------------------------------------------- */
+/* ------------------------  TABLET  ----------------------------*/
+/* -------------------------------------------------------------- */
+@media screen and (min-width:600px) and (max-width:1023px){
+    /*==========  NAVBAR  ===============*/
+ #barraNav{
+   background-color: var(--primary);
+}
+ .navbar .navbar-brand img{
+   width: 50px;
+   justify-content: center;
+   top: 50%;
+   transform: translate(390%, 10%);
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a {
+   font-size: 16pt;
+   margin-left: 15px;
+       
+
+}
+.navbar .navbar-brand span{
+
+   transform: translate(230%, 10%);
+   font-family: 'InaptlyRegular-rgwxB';
+   color: #ffffff;
+   font-size: 26pt;
+       
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+   
+   font-family: 'roboto';
+   font-size: 16px;
+   position: relative;
+   
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+   
+   font-family: 'roboto';
+   font-size: 24px;
+   color: var(--accent);
+   font-weight: bold;
+   transition: 0.3s;
+
+
+     }
+}
+/* -------------------------------------------------------------- */
+/* ------------------------  CELULAR  ----------------------------*/
+/* -------------------------------------------------------------- */
+
+@media(max-width:599px){
+
+    /*FOOTER ICONOS REDES SOCIALES*/
+
+    .footer-iconos .social .fa-brands{
+        color: #8f0408;
+        padding-left: 10px;
+    
+    }
+    .footer-iconos .social .social__enlace i{
+    scale: 1.5;
+    }
+
+    #footer__link a{
+        color:white;
+        text-decoration: none;
+    }
+    
+    #footer__link a:hover {
+        transition: color 0.4s ease-in-out;
+        color: #8f0408; /* Cambia el color del texto al pasar el mouse sobre los enlaces del footer */
+    }
+    
+}

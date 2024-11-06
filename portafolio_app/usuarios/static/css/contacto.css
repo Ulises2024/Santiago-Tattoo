@@ -1,0 +1,244 @@
+/* CARACTERISTICAS GLOBALES */
+:root{
+    --dark-primary : #7B1FA2;
+    --primary : #9C27B0;
+    --light-primary : #E1BEE7;
+    --text-icon : #FFFFFF;
+    --accent : #00BCD4;
+    --primary-text : #212121;
+    --secondary-text : #757575;
+    --divider: #BDBDBD;
+
+
+    /* Calendario */
+    --dark-body__cal: #4d4c5a;
+    --dark-main__cal: #141529;
+    --dark-second__cal: #79788c;
+    --dark-hover__cal: #323048;
+    --dark-text__cal: #f8fbff;
+
+    --light-body__cal: #f3f8fe;
+    --light-main__cal: #fdfdfd;
+    --light-second__cal: #c3c2c8;
+    --light-hover__cal: #edf0f5;
+    --light-text__cal: #151426;
+
+    --blue: var(--primary);
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+/*Fuente para titulo - PATITAS SOLAMENTE*/
+@font-face {
+    font-family: 'CircusWorld';
+    src: url('../fonts/CircusWorldDemoRegular.ttf');
+}
+
+/*Fuente para subtitulo*/
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+/*Fuente para texto*/
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather/Merriweather-Black.ttf');
+}
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    /* border: solid 2px red; */
+}
+
+
+
+ /*==========  NAVBAR  ===============*/
+  /* CONFIGURACION DE NAVBAR */
+  .navbar{
+    /* background-color: var(--dark-main__cal) !important; */
+    width: 100%;
+
+}
+
+
+/*------------ LOGO ----------*/
+.navbar .container-fluid img{
+    width: 4rem;
+    height: auto;
+    margin-right: 6rem;
+    margin-left: 2rem;
+}
+
+
+/*------------ TEXTO-LINK ----------*/
+#navbarSupportedContent .navbar-nav .nav-item a{
+    color: var(--text-icon);
+    font-size: 22px;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+
+
+
+/*------------ TEXT-DROPMENU ----------*/
+#navbarSupportedContent .navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: var(--primary-text);
+    font-family: 'roboto';
+    font-size: 22px;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    
+}
+  #barraNav{
+    background-color: var(--dark-azulado);
+}
+  .navbar .navbar-brand img{
+    width: 60px;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -90px;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
+/* ================================================== */
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem)
+    }
+    50%{
+        transform: translateY(-3.5rem);
+    }
+}
+
+
+body {
+    background-image: url('../img/fondo_registro.webp');
+}
+
+.form_reg .card{
+    background-color: #141529;
+}
+.card{
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 25px;
+}
+
+
+.card h1 {
+    font-size: 2.3em;
+    font-family: 'CircusWorld';
+    color: var(--dark-text__cal);
+}
+
+.card h5 {
+    font-size: 2.3em;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: var(--dark-text__cal);
+}
+
+.form_contacto label{
+    color: var(--dark-text__cal);
+    font-family: 'InaptlyRegular-rgwxB';
+}
+
+#id_password1_helptext {
+    color: var(--dark-text__cal);
+    font-family: 'InaptlyRegular-rgwxB';
+
+}
+#id_password2_helptext {
+    color: var(--dark-text__cal);
+    font-family: 'InaptlyRegular-rgwxB';
+}
+
+.card-body .textinput {
+    border-radius: 15px;
+}
+
+.card-body .emailinput {
+    border-radius: 15px;
+}
+
+#id_password1 {
+    border-radius: 15px;
+}
+
+#id_password2 {
+    border-radius: 15px;
+}
+
+.card-body .btn-success {
+    background-color: #bf1d2d;
+    border-radius: 15px;
+}
+
+.card {
+    width: 30rem;
+    background: var(--dark-main__cal);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor del formulario */
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: var(--dark-main__cal);
+    filter: blur(8px); /* Difuminado */
+    z-index: -1; /* Asegura que esté detrás del formulario */
+    border-radius: 20px; /* Ajusta para que coincida con el borde del formulario */
+}
+
+
+
+/* labels contacto */
+
+.form_contacto label{
+    color: var(--dark-text__cal);
+    font-family: 'InaptlyRegular-rgwxB';
+}
+
+/* ======================================= */

@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/logo/logo_tattoo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"/>
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+    rel="stylesheet"/>
+    <!-- JQUERY -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS - LOGIN -->
+    <link rel="stylesheet" href="{% static 'css/PerfilTatuadorModificar.css' %}">
+
+    <title> Perfil del Tatuador</title>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/logo/logo_tattoo.png' %}" alt="Logo-Santiago-Tattoo">
+            <span class="text-logo">Santiago Tattoo</span> 
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'PerfilUsuario' %}">Perfil Usuario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Registrar</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Administrador</a>
+                    </li>
+                    {% endif %}
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
+                            <i class="fa-regular fa-share-from-square" style="color: #ffffff;"></i>
+                        <span>Salir</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'loginpage' %}">
+                        <i class="fa-regular fa-circle-user" style="color: #ffffff;"></i>
+                        <span>Ingresar</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-------------------- FIN NAVBAR ------------------------------------->
+    <section class="vh-100 section__login">
+        <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-header">
+                <div class="perfil-usuario-portada">
+                    <div class="perfil-usuario-avatar">
+                        <img src="{% static 'img/Perfil_tatuador/tatuadores/' %}{{ tatuador.id }}.webp" alt="img-avatar">
+                        <button type="button" class="boton-avatar">
+                            <i class="far fa-image"></i>
+                        </button>
+                    </div>
+                    <button type="button" class="boton-portada">
+                        <i class="far fa-image"></i> Cambiar fondo
+                    </button>
+                </div>
+            </div>
+            <div class="perfil-usuario-body">
+                <div class="perfil-usuario-bio">
+                    <h3 class="titulo">{{ tatuador.persona.nombre }}</h3>
+                    <p class="texto">Cada uno de nuestros tatuadores está certificado y cuenta con nuestro respaldo en temas de higiene y profesionalidad.</p>
+                </div>
+                <div class="perfil-usuario-footer">
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-map-signs"></i> Nombre del estudio: {{ tatuador.estudio.nombre }}</li>
+                        <li><i class="icono fas fa-phone-alt"></i> Dirección del estudio: {{ tatuador.estudio.direccion.nombre }} # {{ tatuador.estudio.direccion.numero }}</li>
+                        <li><i class="icono fas fa-briefcase"></i> Teléfono: {{ tatuador.telefono.telefono }}</li>
+                    </ul>
+                    <ul class="lista-datos">
+                        <li><i class="icono fas fa-calendar-alt"></i> Edad: {{ tatuador.persona.edad }}</li>
+                        <li><i class="icono fas fa-user-check"></i> Email: {{ tatuador.emails.mail }}</li>
+                        <li><i class="icono fas fa-share-alt" href="#"></i> Redes sociales.</li>
+                    </ul>
+                    <form method="POST" action="{% url 'PerfilTatuadorModificar' tatuador.id %}">
+                        {% csrf_token %}
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value="{{ tatuador.persona.nombre }}">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" value="{{ tatuador.telefono.telefono }}">
+                        <label for="edad">Edad:</label>
+                        <input type="text" id="edad" name="edad" value="{{ tatuador.persona.edad }}">
+                        <button type="submit">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </section>
+        <section class="vh-100 section__login">
+        <div class="container py-5 h-100 ">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                    <div class="text-center row row-cols-3 ">
+                        {% for portafolio in portafolios %}
+                        <div class="card">
+                            <h2>{{ portafolio.titulo }}</h2>
+                            <img class="img-thumbnail" src="{{ portafolio.foto }}" alt="Foto de Portafolio">
+                            <p>{{ portafolio.descripcion }}</p>
+                            <p>Tatuador: {{ portafolio.tatuador.persona.nombre }}</p>
+                            <!-- Formulario para eliminar la card -->
+                            <form method="post" action=" ">
+                                {% csrf_token %}
+                                <!-- Campo oculto para enviar el ID del portafolio -->
+                                <input type="hidden" name="portafolio_id" value="{{ portafolio.id }}">
+                                <!-- Botón para enviar el formulario -->
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </div>
+                        {% endfor %}
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Agregar Nuevo Portafolio</h5>
+                                <form method="post" action="{% url 'PerfilTatuadorModificar' tatuador.id %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="titulo_nuevo" class="form-label">Título:</label>
+                                        <input type="text" class="form-control" id="titulo_nuevo" name="titulo_nuevo" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="descripcion_nueva" class="form-label">Descripción:</label>
+                                        <input type="text" class="form-control" id="descripcion_nueva" name="descripcion_nueva" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="foto_nueva" class="form-label">URL de la Foto:</label>
+                                        <input type="text" class="form-control" id="foto_nueva" name="foto_nueva" required>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success">Agregar Portafolio</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="vh-100 section__login">
+        <section class="vh-100 section__login">
+            <div class="container py-5 h-100 ">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col col-xl-10">
+                        <div class="text-center row row-cols-3 ">
+                            {% for diseño in disenos %}
+                            <div class="card">
+                                <h2>{{ diseño.titulo }}</h2>
+                                <img class="img-thumbnail" src="{{ diseño.foto }}" alt="Foto de diseño">
+                                <p>{{ diseño.descripcion }}</p>
+                                <p>{{ diseño.estilo }}</p>
+                                <p>Tatuador: {{ diseño.tatuador.persona.nombre }}</p>
+                                <!-- Formulario para eliminar la card -->
+                                <form method="post" action="{% url 'PerfilTatuadorModificar' tatuador.id %}">
+                                    {% csrf_token %}
+                                    <!-- Campo oculto para enviar el ID del diseño -->
+                                    <input type="hidden" name="disenos_id" value="{{ diseño.id }}">
+                                    <!-- Botón para enviar el formulario -->
+                                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">Agregar Nuevo Diseño</h5>
+                                    <form method="post" action="{% url 'PerfilTatuadorModificar' tatuador.id %}">
+                                        {% csrf_token %}
+                                        <div class="mb-3">
+                                            <label for="titulo_nuevo" class="form-label">Título:</label>
+                                            <input type="text" class="form-control" id="titulo_nuevos" name="titulo_nuevos" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="descripcion_nueva" class="form-label">Descripción:</label>
+                                            <input type="text" class="form-control" id="descripcion_nuevas" name="descripcion_nuevas" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="foto_nueva" class="form-label">URL de la Foto:</label>
+                                            <input type="text" class="form-control" id="foto_nuevas" name="foto_nuevas" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="foto_nueva" class="form-label">Estilo:</label>
+                                            <input type="text" class="form-control" id="estilo_nuevos" name="estilo_nuevos" required>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-success">Agregar Diseño</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section class="vh-100 section__login">
+
+    </section>
+</body>
+</html>
+

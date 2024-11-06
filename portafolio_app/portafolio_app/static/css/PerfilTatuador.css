@@ -1,0 +1,491 @@
+/* CARACTERISTICAS GLOBALES */
+:root{
+    --dark-primary : #000000;
+    --primary : #000000;
+    --light-primary : #E1BEE7;
+    --text-icon : #FFFFFF;
+    --accent : #8f0408;
+    --primary-text : #212121;
+    --secondary-text : #757575;
+    --divider: #BDBDBD;
+
+    /* OPCION DE PALETA 2 */
+    --dark-verde-azulado: #217074;
+    --dark-azulado: #237C6C;
+    --dark-verde:#2D554A;
+    --light-verde: #5EBAA6;
+    --light-pastel-verde: #B8E1D9;
+    --light-blank: #F0F0F8;
+
+
+
+    /* Calendario */
+    --dark-body__cal: #4d4c5a;
+    --dark-main__cal: #141529;
+    --dark-second__cal: #79788c;
+    --dark-hover__cal: #323048;
+    --dark-text__cal: #f8fbff;
+
+    --light-body__cal: #f3f8fe;
+    --light-main__cal: #fdfdfd;
+    --light-second__cal: #c3c2c8;
+    --light-hover__cal: #edf0f5;
+    --light-text__cal: #151426;
+
+    --blue: var(--primary);
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+/*Fuente para titulo - PATITAS SOLAMENTE*/
+@font-face {
+    font-family: 'PawWowBlock-VGMDl';
+    src: url('../fonts/AnimalPaw.ttf');
+}
+
+/*Fuente para subtitulo*/
+@font-face {
+    font-family: 'InaptlyRegular-rgwxB';
+    src: url('../fonts/InaptlyRegular-rgwxB.ttf');
+}
+
+/*Fuente para texto*/
+@font-face {
+    font-family: 'roboto';
+    src: url('href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+}
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    /* border: solid 2px red; */
+}
+
+  /*=========================================================================================================*/
+
+/*==========  NAVBAR  ===============*/
+  /* CONFIGURACION DE NAVBAR */
+  .navbar{
+    /* background-color: var(--dark-main__cal) !important; */
+    width: 100%;
+
+}
+
+
+/*------------ LOGO ----------*/
+.navbar .container-fluid img{
+    width: 4rem;
+    height: auto;
+    margin-right: 6rem;
+    margin-left: 2rem;
+}
+
+
+/*------------ TEXTO-LINK ----------*/
+#navbarSupportedContent .navbar-nav .nav-item a{
+    color: var(--text-icon);
+    font-size: 22px;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+
+
+
+/*------------ TEXT-DROPMENU ----------*/
+#navbarSupportedContent .navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: var(--primary-text);
+    font-family: 'roboto';
+    font-size: 22px;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    
+}
+  #barraNav{
+    background-color: var(--dark-azulado);
+}
+  .navbar .navbar-brand img{
+    width: 40px;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -90px;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+/*cards portafolio*/
+#portafolio__div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    display: flex;
+    max-width: 11000px;
+  }
+  
+  #portafolio__div .card {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #portafolio__div div img {
+    max-width: 100%;
+    max-height: 300px;
+  }  
+
+/* -------------------------------------------------------------------- */
+.section__login{
+    height: 100vh;
+    width: 100%;
+    z-index: 50;
+    margin-bottom: 2 rem;
+}
+
+#img__fondo{
+    background-image: url('../img/seccion/Tattoo_parallax.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 15px 0 0 15px;
+  }
+ 
+body{
+    background-image: url('../img/seccion/tattoo_wallpaper.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo__text{
+    font-family: 'PawWowBlock-VGMDl';
+    font-size: 16pt;
+    color: var(--dark-main__cal);
+}
+
+.clear {
+    clear: both;
+}
+
+/* SECCION FOOTER  */
+/*FOOTER ICONOS REDES SOCIALES*/
+
+.footer-iconos .social .fa-brands{
+    color: #8f0408;
+    padding-left: 25px;
+
+}
+.footer-iconos .social .social__enlace i{
+scale: 1.8;
+}
+
+#footer__link a{
+    color:white;
+    text-decoration: none;
+}
+
+#footer__link a:hover {
+    transition: color 0.4s ease-in-out;
+    color: #8f0408; /* Cambia el color del texto al pasar el mouse sobre los enlaces del footer */
+}
+
+label.error{
+    color: red;
+    font-size: 0.8em;
+    width: 200px;
+    top: 1px;
+   }
+
+   .seccion-perfil-usuario .perfil-usuario-body,
+   .seccion-perfil-usuario {
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       align-items: center;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-header {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       background: linear-gradient(#000000, transparent);
+       margin-bottom: 1.25rem;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-portada {
+       display: block;
+       position: relative;
+       width: 90%;
+       height: 17rem;
+       background-image: linear-gradient(45deg, #970a0a, #000000);
+       border-radius: 0 0 20px 20px;
+       /*
+       background-image: url('http://localhost/multimedia/png/user-portada-3.png');
+       background-repeat: no-repeat;
+       background-position: center;
+       background-size: cover;
+       */
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
+       position: absolute;
+       top: 1rem;
+       right: 1rem;
+       border: 0;
+       border-radius: 8px;
+       padding: 12px 25px;
+       background-color: rgba(0, 0, 0, .5);
+       color: #fff;
+       cursor: pointer;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
+       margin-right: 1rem;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-avatar {
+       display: flex;
+       width: 180px;
+       height: 180px;
+       align-items: center;
+       justify-content: center;
+       border: 7px solid #FFFFFF;
+       background-color: #DFE5F2;
+       border-radius: 50%;
+       box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+       position: absolute;
+       bottom: -40px;
+       left: calc(50% - 90px);
+       z-index: 1;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-avatar img {
+       width: 100%;
+       position: relative;
+       border-radius: 50%;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
+       position: absolute;
+       left: -2px;
+       top: -2px;
+       border: 0;
+       background-color: #fff;
+       box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+       width: 45px;
+       height: 45px;
+       border-radius: 50%;
+       cursor: pointer;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-body {
+       width: 70%;
+       position: relative;
+       max-width: 750px;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-body .titulo {
+       display: block;
+       width: 100%;
+       font-size: 1.75em;
+       margin-bottom: 0.5rem;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-body .texto {
+       color: #848484;
+       font-size: 0.95em;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-footer,
+   .seccion-perfil-usuario .perfil-usuario-bio {
+       display: flex;
+       flex-wrap: wrap;
+       padding: 1.5rem 2rem;
+       box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+       background-color: rgba(255, 255, 255, 0.8);;
+       border-radius: 15px;
+       width: 100%;
+   }
+   
+   .seccion-perfil-usuario .perfil-usuario-bio {
+       margin-bottom: 1.25rem;
+       text-align: center;
+   }
+   .seccion-perfil-usuario .perfil-usuario-bio .texto {
+       text-align: center;
+   }
+   
+   .seccion-perfil-usuario .lista-datos {
+       width: 50%;
+       list-style: none;
+   }
+   
+   .seccion-perfil-usuario .lista-datos li {
+       padding: 5px 0;
+   }
+   
+   .seccion-perfil-usuario .lista-datos li>.icono {
+       margin-right: 1rem;
+       font-size: 1.2rem;
+       vertical-align: middle;
+   }
+   
+   
+   /* adactacion a dispositivos */
+   @media (max-width: 750px) {
+       .seccion-perfil-usuario .lista-datos {
+           width: 100%;
+       }
+   
+       .seccion-perfil-usuario .perfil-usuario-portada,
+       .seccion-perfil-usuario .perfil-usuario-body {
+           width: 95%;
+       }
+   }
+
+/* -------------------------------------------------------------- */
+/* ------------------------  TABLET  ----------------------------*/
+/* -------------------------------------------------------------- */
+@media screen and (min-width:600px) and (max-width:1023px){
+    /*==========  NAVBAR  ===============*/
+ #barraNav{
+   background-color: var(--primary);
+}
+ .navbar .navbar-brand img{
+   width: 50px;
+   justify-content: center;
+   top: 50%;
+   transform: translate(390%, 10%);
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a {
+   font-size: 16pt;
+   margin-left: 15px;
+       
+
+}
+.navbar .navbar-brand span{
+
+   transform: translate(230%, 10%);
+   font-family: 'InaptlyRegular-rgwxB';
+   color: #ffffff;
+   font-size: 26pt;
+       
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+   
+   font-family: 'roboto';
+   font-size: 16px;
+   position: relative;
+   
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+   
+   font-family: 'roboto';
+   font-size: 24px;
+   color: var(--accent);
+   font-weight: bold;
+   transition: 0.3s;
+
+
+     }
+}
+/* -------------------------------------------------------------- */
+/* ------------------------  CELULAR  ----------------------------*/
+/* -------------------------------------------------------------- */
+
+@media(max-width:599px){
+
+    /*FOOTER ICONOS REDES SOCIALES*/
+
+    .footer-iconos .social .fa-brands{
+        color: #8f0408;
+        padding-left: 10px;
+    
+    }
+    .footer-iconos .social .social__enlace i{
+    scale: 1.5;
+    }
+
+    #footer__link{
+        transition: color 0.4s ease-in-out;
+    }
+    
+    #footer__link a:hover {
+        color: #8f0408; /* Cambia el color del texto al pasar el mouse sobre los enlaces del footer */
+    }
+}
+
+#tatuadores-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 1rem;
+    background-color: #f5f5f5;
+}
+
+#tatuadores-section .card {
+    margin: 1rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#tatuadores-section .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#tatuadores-section .card-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#tatuadores-section .card-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 767.98px) {
+    #tatuadores-section {
+        flex-direction: column;
+    }
+
+    #tatuadores-section .card {
+        margin: 0.5rem;
+    }
+}

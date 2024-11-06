@@ -1,0 +1,301 @@
+/* CARACTERISTICAS GLOBALES */
+:root{
+    --dark-primary : #7B1FA2;
+    --primary : #9C27B0;
+    --light-primary : #E1BEE7;
+    --text-icon : #FFFFFF;
+    --accent : #00BCD4;
+    --primary-text : #212121;
+    --secondary-text : #757575;
+    --divider: #BDBDBD;
+
+    /* OPCION DE PALETA 2 */
+    --dark-verde-azulado: #217074;
+    --dark-azulado: #237C6C;
+    --dark-verde:#2D554A;
+    --light-verde: #5EBAA6;
+    --light-pastel-verde: #B8E1D9;
+    --light-blank: #F0F0F8;
+
+
+
+    /* Calendario */
+    --dark-body__cal: #4d4c5a;
+    --dark-main__cal: #141529;
+    --dark-second__cal: #79788c;
+    --dark-hover__cal: #323048;
+    --dark-text__cal: #f8fbff;
+
+    --light-body__cal: #f3f8fe;
+    --light-main__cal: #fdfdfd;
+    --light-second__cal: #c3c2c8;
+    --light-hover__cal: #edf0f5;
+    --light-text__cal: #151426;
+
+    --blue: var(--primary);
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    /* border: solid 2px red; */
+}
+
+
+
+    header{
+        background-color: var(--dark-primary);
+        height: 2rem;
+    }
+    .espacio-top{
+        height: 4rem;
+    }
+
+    .box{
+        position: absolute;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-left: auto;
+        margin-top: 2rem;
+        background-color: var(--dark-primary);
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+
+    }
+    .box {
+
+        width: 125px;
+        height: 125px;
+        top: -72px;
+        left: calc(50% - 608px);
+    }
+    .card-header{
+        background-color: var(--primary);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .card-header{
+        background-color: var(--primary);
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .card-header h1{
+        color: var(--dark-text__cal);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .card .logo-top{
+        position: absolute;
+        width: 7rem;
+        top: -2rem;
+        left: 4%;
+
+    }
+
+
+/* NAVBAR */
+
+  /*==========  NAVBAR  ===============*/
+  /* CONFIGURACION DE NAVBAR */
+  .navbar{
+    /* background-color: var(--dark-main__cal) !important; */
+    width: 100%;
+    
+
+    
+}
+
+/*------------ LOGO ----------*/
+.navbar .container-fluid img{
+    width: 4rem;
+    height: auto;
+    margin-right: 6rem;
+    margin-left: 2rem;
+}
+
+
+/*------------ TEXTO-LINK ----------*/
+#navbarSupportedContent .navbar-nav .nav-item a{
+    color: var(--text-icon);
+    font-size: 22px;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+
+
+
+/*------------ TEXT-DROPMENU ----------*/
+#navbarSupportedContent .navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: var(--primary-text);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    
+}
+  #barraNav{
+    background-color: var(--dark-azulado);
+}
+  .navbar .navbar-brand img{
+    width: 40px;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -90px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
+
+/* SECCION FOOTER  */
+
+/*FOOTER ICONOS REDES SOCIALES*/
+.footer {
+    padding: 1em 0;
+}
+.footer .container{
+    background-color: #212121;
+    
+}
+.footer-iconos .social .fa-brands{
+    color: #bf1d2d;
+    padding-left: 25px;
+
+}
+.footer-iconos .social .social__enlace i{
+scale: 1.8;
+}
+
+label.error{
+    color: red;
+    font-size: 0.8em;
+    width: 200px;
+   }
+
+    /* AJUSTAR UBICACION DEL LOGO A 767 px */
+
+@media only screen and (max-width: 767px){
+    .espacio-top{
+        height: 8.5rem;
+    }
+    .box{
+        position: absolute;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-left: auto;
+        margin-top: 2rem;
+        background-color: var(--dark-primary);
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+
+    }
+    .box {
+
+        width: 125px;
+        height: 110px;
+        top: -150px;
+        left: calc(50% - 66px);
+    }
+    .card .logo-top{
+        position: absolute;
+
+        width: 120px;
+        height: 100px;
+        top: -112px;
+        left: calc(50% - 60px);
+
+
+    }
+    
+
+}
+
+
+@media only screen and (max-width: 412px){
+    .espacio-top{
+        height: 8.5rem;
+    }
+    .box{
+        position: absolute;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-left: auto;
+        margin-top: 2rem;
+        background-color: var(--dark-primary);
+        width: 7rem;
+        height: 5rem;
+        top: -19%;
+        left: 37%;
+        border-top-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+
+    }
+    .box {
+
+        width: 125px;
+        height: 110px;
+        top: -150px;
+        left: calc(50% - 70px);
+
+    }
+    .card .logo-top{
+        position: absolute;
+
+        width: 120px;
+        height: 100px;
+        top: -112px;
+        left: calc(50% - 60px);
+
+
+    }
+
+    /*FOOTER ICONOS REDES SOCIALES*/
+
+    .footer-iconos .social .fa-brands{
+        color: #9c27b0;
+        padding-left: 10px;
+    
+    }
+    .footer-iconos .social .social__enlace i{
+    scale: 1.5;
+    }
+}

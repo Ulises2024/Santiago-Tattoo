@@ -1,0 +1,40 @@
+{% extends "BaseBlock.html" %}
+{% load static %}
+  {% block styles %}  
+    <!-- CSS - LOGIN -->
+    <link rel="stylesheet" href="{% static './css/reseña.css' %}">
+    {% endblock %}
+    {% block title %}Reseñas{% endblock %}
+    {% block content %}
+        <div class="container py-5 h-99">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                    <h1 class="row d-flex justify-content-center align-items-center h-100">Reseñas</h1>
+                        {% for reseña in reseñas %}
+                        <div class="container text-center" id="portafolio__div">
+                            <div class="card">
+                                <h2>{{ reseña.titulo }}</h2>
+                                <p>{{ reseña.cuerpo }}</p>
+                                <p>{{ reseña.calificacion }}</p>
+                                <p>tatuador: {{ reseña.tatuador.persona.nombre }}</p>
+                                <p>de : {{ reseña.cliente.persona.nombre }}</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                          <form method="post" action=" ">
+                            {% csrf_token %}
+                            <!-- Campo oculto para enviar el ID del portafolio -->
+                            <input type="hidden" name="portafolio_id" value="{{ portafolio.id }}">
+                            <!-- Botón para enviar el formulario -->
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                          </form>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        {% endblock %}
